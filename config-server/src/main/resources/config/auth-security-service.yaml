@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: auth-security-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/learnly_auth_service_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+server:
+  port: 8086
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+    registry-fetch-interval-seconds: 5
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+
+jwt:
+  secret: 3Y8xV5+v9DqP3+7lTnHZR0X9p8ZXk6Y7RliA2FWq2BA=
+  access:
+    expiration: 900000
+  refresh:
+    expiration: 604800000

@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: auth-security-service
+  config:
+    import: optional:configserver:http://localhost:8085
